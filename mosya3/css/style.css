@@ -1,0 +1,837 @@
+@charset "UTF-8";
+
+* {
+  border: #37383c;
+}
+
+html {
+  max-width: 100%;
+}
+
+body {
+  background-color: #fcfcfc;
+}
+
+
+
+/*-----------------------
+　　　　　ヘッター
+------------------------*/
+
+#header {
+  /* height: 50px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+}
+
+.menu-btn {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  border: none;
+  background: transparent;
+  appearance: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-btn-bar {
+  display: inline-block;
+  width: 44%;
+  height: 2px;
+  background: #242424;
+  position: absolute;
+  left: 80px;
+  transform: translateX(-80%);
+  transition: .5s;
+}
+
+.menu-btn-bar:first-child {
+  top: 16px;
+}
+
+.menu-btn-bar:nth-child(2) {
+  top: 24px;
+}
+
+.menu-btn-bar:last-child {
+  top: 50%;
+}
+
+.menu-btn--open .menu-btn-bar {
+  top: 50%;
+}
+
+.menu-btn--open .menu-btn-bar:first-child {
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+.menu-btn--open .menu-btn-bar:last-child {
+  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+}
+
+.menu-btn--open .menu-btn-bar:nth-child(2) {
+  display: none;
+}
+
+.nav {
+  display: none;
+  background: #242424;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  z-index: 9999;
+}
+
+.nav-list-top {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  border-bottom: solid 1px #474747;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  display: block;
+  padding: 24px 0;
+  transition: .5s;
+}
+
+.nav-link:first-child {
+  border-top: solid 1px #474747;
+}
+
+
+
+.top-nav {
+  position: absolute;
+  writing-mode: vertical-lr;
+  right: 19%;
+  top: 80px;
+}
+
+.top-nav li {
+  list-style: none;
+}
+
+.top-nav-list {
+  color: #37383c;
+  text-decoration: none;
+  line-height: 45px;
+  letter-spacing: 5px;
+  font-family: "Zen Kaku Gothic New", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.main-img {
+  width: 468px;
+  text-align: center;
+}
+
+.main-logo {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 300px;
+  left: 12%;
+}
+
+.main-logo h1 {
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-logo2 {
+  position: absolute;
+  right: 9%;
+  top: 650px;
+  width: 100px;
+}
+
+.main-logo-name {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.main-logo span {
+  color: #87b7c7;
+  font-family: "Zen Kaku Gothic New", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 0.625rem;
+  line-height: 15px;
+  letter-spacing: 5px;
+}
+
+.main-img-wrapper {
+  text-align: center;
+}
+
+.back1-yellow {
+  position: absolute;
+  left: 1%;
+  top: 580px;
+  width: 200px;
+}
+
+.back1-blue {
+  position: absolute;
+  left: 3%;
+  top: 580px;
+  width: 300px;
+}
+
+.back2-yellow {
+  position: absolute;
+  right: 10%;
+  top: 250px;
+  width: 200px;
+}
+
+.back2-blue {
+  position: absolute;
+  right: 1%;
+  top: 320px;
+  width: 300px;
+}
+
+#home {
+  margin-bottom: 220px;
+}
+
+#works {
+  max-width: 1088px;
+  margin: 0 auto;
+  margin-bottom: 250px;
+}
+
+.works-title {
+  color: rgb(55, 56, 60);
+  font-family: "Zen Kaku Gothic New", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.375rem;
+  letter-spacing: 0.2em;
+  padding-left: 190px;
+}
+
+.works-title::before {
+  content: "";
+  position: absolute;
+  top: 1090px;
+  left: 250px;
+  border: solid 1px #3e3e3e;
+  width: 160px;
+  height: 1px;
+}
+
+.works-wrapper {
+  margin-top: 60px;
+  margin-bottom: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.works-text-wrapper {
+  position: relative;
+  padding-left: 70px;
+  font-family: "Zen Kaku Gothic New", serif;
+  line-height: 20px;
+}
+
+.works-text-wrapper h4 {
+  color: rgb(132, 181, 197);
+  font-weight: 300;
+  font-size: 0.750rem;
+}
+
+.works-text-wrapper h3 {
+  font-weight: 500;
+  line-height: 26px;
+  font-size: 1.625rem;
+}
+
+.works-text-wrapper p {
+  font-weight: 400;
+  line-height: 25px;
+  font-size: 0.9375rem;
+}
+
+.works-text-wrapper span {
+  font-weight: 300;
+  line-height: 12px;
+  font-size: 0.750rem;
+  color: rgb(179, 179, 179);
+}
+
+.works-btn {
+  font-weight: 400;
+  line-height: 12px;
+  font-size: 0.750rem;
+  text-align: right;
+}
+
+.works-img {
+  max-width: 50%;
+}
+
+.works-img img {
+  width: 100%;
+}
+
+.works-wrapper02 {
+  margin-top: 60px;
+  margin-bottom: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.works-img02 {
+  max-width: 50%;
+}
+
+.works-img02 img {
+  width: 100%;
+}
+
+.works-text-wrapper02{
+  position: relative;
+  padding-right: 70px;
+  font-family: "Zen Kaku Gothic New", serif;
+  line-height: 20px;
+}
+
+.works-text-wrapper02 h4 {
+  color: rgb(132, 181, 197);
+  font-weight: 300;
+  font-size: 0.750rem;
+}
+
+.works-text-wrapper02 h3 {
+  font-weight: 500;
+  line-height: 26px;
+  font-size: 1.625rem;
+}
+
+.works-text-wrapper02 p {
+  font-weight: 400;
+  line-height: 25px;
+  font-size: 0.9375rem;
+}
+
+.works-text-wrapper02 span {
+  font-weight: 300;
+  line-height: 12px;
+  font-size: 0.750rem;
+  color: rgb(179, 179, 179);
+}
+
+.works-btn02 {
+  font-weight: 400;
+  line-height: 12px;
+  font-size: 0.750rem;
+  text-align: right;
+}
+
+.works-back1-yellow {
+  position: absolute;
+  right: 2%;
+  top: 1100px;
+  width: 200px;
+}
+
+.works-back1-blue {
+  position: absolute;
+  right: 5%;
+  top: 980px;
+  width: 300px;
+}
+
+.works-back2-yellow {
+  position: absolute;
+  left: 2%;
+  top: 2900px;
+  width: 200px;
+}
+
+.works-back2-blue {
+  position: absolute;
+  left: 5%;
+  top: 3000px;
+  width: 300px;
+}
+
+.works-btn-y {
+  position: relative;
+  display: inline-block;
+  width: 13px;
+  height: 1px;
+  margin-top: 4.8px;
+  border-radius: 9999px;
+  background-color: rgb(55, 56, 60);
+}
+
+.works-btn-y::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 0.5px);
+  right: 0;
+  width: 9px;
+  height: 1px;
+  border-radius: 9999px;
+  background-color: rgb(55, 56, 60);
+  transform: rotate(37deg);
+  transform-origin: calc(100% - 0.5px) 50%;
+}
+
+.works-others {
+  display: inline-block;
+  text-decoration: none;
+  border: solid 1px rgb(132, 181, 197);
+  color: #FFF;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.works-others:hover {
+  background: rgb(192, 224, 235);;
+}
+
+.works-btn-yd1 {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  margin-top: 10.9px;
+  border-radius: 9999px;
+  background-color: rgb(179, 179, 179);
+}
+
+.works-btn-yd1::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  width: 20px;
+  height: 2px;
+  border-radius: 9999px;
+  background-color: rgb(179, 179, 179);
+  transform: rotate(37deg);
+  transform-origin: calc(100% - 1px) 50%;
+}
+
+.works-other {
+  display: flex;
+  justify-content: center;
+}
+
+.works-other a {
+  margin: auto 30px;
+  color: rgb(132, 181, 197);
+  border: none;
+  text-decoration: none;
+}
+
+/*--------------------
+　　　　わたしのこと
+---------------------*/
+
+.about-title {
+  color: rgb(55, 56, 60);
+  font-family: "Zen Kaku Gothic New", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.375rem;
+  letter-spacing: 0.2em;
+  padding-left: 70px;
+}
+
+.about-title::before {
+  content: "";
+  position: absolute;
+  top: 3480px;
+  left: 250px;
+  border: solid 1px #3e3e3e;
+  width: 160px;
+  height: 1px;
+}
+
+#about {
+  max-width: 836px;
+  margin: 0 auto;
+  margin-bottom: 200px;
+}
+
+.about {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+
+.about-text {
+  padding: 0 69px; 
+}
+
+.about-text h3 {
+  font-family: "Zen Kaku Gothic New", serif;
+  font-weight: 500;
+  font-size: 1.625rem;
+}
+
+.about-text p {
+  font-family: "Zen Kaku Gothic New", serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+}
+
+.about-img {
+  box-shadow: 9px 9px 12px 0px #999;
+}
+
+.about-img  img{
+  width: 294px;
+  height: 392px;
+  object-fit: cover;
+  background-color: #fff;
+}
+
+
+
+.about-img2 {
+  position: absolute;
+  width: 150px;
+  right: 20%;
+  top: 3470px;
+  animation:8s linear infinite rotation;
+}
+
+@keyframes rotation{
+  0%{ transform:rotate(0);}
+  100%{ transform:rotate(360deg); }
+}
+
+.about-others {
+  display: inline-block;
+  text-decoration: none;
+  border: solid 1px rgb(132, 181, 197);
+  color: #FFF;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.about-others:hover {
+  background: rgb(192, 224, 235);
+}
+
+.about-btn2 {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  margin-top: 10.9px;
+  border-radius: 9999px;
+  background-color: rgb(179, 179, 179);
+}
+
+.about-btn2::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  width: 20px;
+  height: 2px;
+  border-radius: 9999px;
+  background-color: rgb(179, 179, 179);
+  transform: rotate(37deg);
+  transform-origin: calc(100% - 1px) 50%;
+} 
+
+.about-btn {
+  display: flex;
+  justify-content: left;
+}
+
+.about-btn a {
+  margin: auto 30px;
+  color: rgb(132, 181, 197);
+  border: none;
+  text-decoration: none;
+}
+
+.about-back2-yellow {
+  position: absolute;
+  right: 5%;
+  top: 3650px;
+  width: 200px;
+}
+
+.about-back2-blue {
+  position: absolute;
+  right: 1%;
+  top: 3700px;
+  width: 300px;
+}
+
+/*-------------------
+　　　　イラスト
+--------------------*/
+
+.about-illust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 120px;
+}
+
+.illust-img img{
+  width: 120px;
+  padding: 0 30px 0 0;
+}
+
+.illust-text {
+  font-family: "Zen Kaku Gothic New", serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 30px;
+}
+
+/*------------------
+　　　無限スライダー
+-------------------*/
+
+#illust {
+  margin-bottom: 450px;
+}
+
+@keyframes infinity-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+    to {
+    transform: translateX(-100%);
+  }
+  }
+  .scroll-infinity__wrap {
+    display: flex;
+    overflow: hidden;
+  }
+  .scroll-infinity__list {
+    display: flex;
+    list-style: none;
+    padding: 0
+  }
+  .scroll-infinity__list--left {
+    animation: infinity-scroll-left 80s infinite linear 0.5s both;
+  }
+  .scroll-infinity__item {
+    width: calc(100vw / 6);
+    padding-right: 25px;
+  }
+  .scroll-infinity__item>img {
+    width: 100%;
+  }
+
+  @keyframes infinity-scroll-right {
+    from {
+      transform: translateX(-100%);
+    }
+      to {
+      transform: translateX(0%);
+    }
+    }
+    .scroll-infinity__list--right{
+      animation :infinity-scroll-right 80s infinite linear 0.5s both;
+    }
+
+    .scroll-infinity {
+      margin-bottom: 66px;
+    }
+
+    .scroll-infinity__item span {
+      font-size: 0.625rem;
+      font-weight: 400;
+      line-height: 10px;
+      font-family: "Zen Kaku Gothic New", serif;
+      color: rgb(179, 179, 179);
+    }
+
+    .illust-back2-yellow {
+      position: absolute;
+      left: 1%;
+      top: 5000px;
+      width: 200px;
+    }
+    
+    .illust-back2-blue {
+      position: absolute;
+      left: 3%;
+      top: 5070px;
+      width: 300px;
+    }
+
+    /*----------------------
+    　　　　　イラスト
+    ----------------------*/
+
+    #contact {
+      background-image: url(../img/footer-size02.png);
+      background-size: cover;
+      width: 100%;
+      height: 850px;
+      text-align: center;
+    }
+
+    #contact::before { 
+      content: "";
+      position: absolute;
+      color: #37383C;
+      width: 1px;
+      height: 600px;
+      top: 7000px;
+      right: 50%;
+      animation: pathmove 2s ease-in-out infinite;
+      opacity: 1;
+    }
+
+    @keyframes pathmove {
+      0% {
+        height: 0;
+        top: -160px;
+        opacity: 0;
+      }
+      30% {
+        height: 120px;
+        opacity: 1;
+      }
+      100% {
+        height: 0;
+        top: 160px;
+        opacity: 0;
+      }
+    } */
+
+    .contact-illust {
+      padding: 200px 0 60px 0;
+    }
+
+    .contact-illust img {
+      width: 100px;
+    }
+
+    .contact-illust p {
+      font-size: 1.375rem;
+      font-weight: 500;
+      line-height: 22px;
+    }
+
+    .contact-img {
+      width: 880px;
+      margin-bottom: 60px;
+    }
+
+    .contact-text {
+      font-size: 0.9375rem;
+      font-weight: 400;
+      line-height: 15px;
+      font-style: normal;
+      color: rgb(55, 56, 60);
+      margin-bottom: 30px;
+    }
+
+    .contact-btn {
+      background: rgb(255, 255, 255);
+      border-radius: 9999px;
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 420px;
+      padding: 23px 95px 23px 80px;
+      color: rgb(192, 224, 235);
+      line-height: 1.4;
+      text-decoration: none;
+      text-align: center;
+      transition: 0.3s ease-in-out;
+      font-weight: 500;
+      border: solid 1px #84B5C5;;
+    }
+    .contact-btn:hover {
+      background: #84B5C5;;
+      color: rgb(255, 255, 255);
+    }
+    
+    .contact-btn:hover:after {
+      border-color: #FFF;
+    }
+
+    /*-----------------------
+    　　　　　　フッター
+    -----------------------*/
+
+    #footer {
+      display: flex;
+      align-items: center;
+      color: rgb(55, 56, 60);
+      justify-content: space-between;
+      padding: 30px 70px;
+    }
+    
+    .footer-nav {
+      font-weight: 500;
+      list-style: none;
+      font-size: 0.875rem;
+    }
+
+    .footer-nav nav ul li {
+      display: inline-block;
+      position: relative;
+      letter-spacing: 0.18em;
+      padding-right: 48px;
+      
+    }
+
+    .footer-nav nav ul li a {
+      text-decoration: none;
+      color: rgb(55, 56, 60);
+    }
+
+    .footer-list01::after {
+      content: "/";
+      position: absolute;
+      top: 0;
+      left: 74px;
+    }
+
+    .footer-list02::after {
+      content: "/";
+      position: absolute;
+      top: 0;
+      left: 155px;
+    }
+
+    .footer-name {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      font-weight: 500;
+    }
